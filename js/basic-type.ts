@@ -45,3 +45,34 @@ document.body.innerHTML += '<h2>元组</h2>';
 document.body.innerHTML += '<p>可以定义不同类型的数组</p>';
 let x: [string, number] = ['hello',666];
 document.body.innerHTML += `${x[0]} and  ${x[1]}`;
+
+//枚举
+document.body.innerHTML += '<h2>枚举</h2>';
+document.body.innerHTML += '<p>enum类型是对JavaScript标准数据类型的一个补充</p>';
+enum Color {red,green,blue};
+let c: Color = Color.blue;
+document.body.innerHTML += `1.${c}</br>`;
+enum Color1 { Red = 1, Green, Blue }
+let c1: Color1 = Color1.Green;
+document.body.innerHTML += `2.${c1}</br>`;
+enum Color2 { Red = 1, Green, Blue }
+let colorName: string = Color2[2];
+let c2: Color2 = Color2.Green;
+document.body.innerHTML += `3.${colorName} - ${c2}</br>`;
+
+//Any
+document.body.innerHTML += '<h2>Any</h2>';
+document.body.innerHTML += '<p>动态类型</p>';
+let notSure: any = 666;
+notSure = 'maybe a string instead';
+document.body.innerHTML += `${notSure}</br>`;
+let notSure1: any = 4;
+// notSure1.ifItExists(); // okay, ifItExists might exist at runtime
+// notSure1.toFixed();
+
+let prettySure: Object = 4;
+// prettySure.toFixed(); //error
+
+let anyList: any[] = [1, true, "free"];
+anyList[1] = 100;
+document.body.innerHTML += `${anyList[0]} - ${anyList[1]} - ${anyList[2]}`;

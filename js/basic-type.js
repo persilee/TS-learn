@@ -43,4 +43,47 @@ document.body.innerHTML += '<h2>元组</h2>';
 document.body.innerHTML += '<p>可以定义不同类型的数组</p>';
 var x = ['hello', 666];
 document.body.innerHTML += x[0] + " and  " + x[1];
+//枚举
+document.body.innerHTML += '<h2>枚举</h2>';
+document.body.innerHTML += '<p>enum类型是对JavaScript标准数据类型的一个补充</p>';
+var Color;
+(function (Color) {
+    Color[Color["red"] = 0] = "red";
+    Color[Color["green"] = 1] = "green";
+    Color[Color["blue"] = 2] = "blue";
+})(Color || (Color = {}));
+;
+var c = Color.blue;
+document.body.innerHTML += "1." + c + "</br>";
+var Color1;
+(function (Color1) {
+    Color1[Color1["Red"] = 1] = "Red";
+    Color1[Color1["Green"] = 2] = "Green";
+    Color1[Color1["Blue"] = 3] = "Blue";
+})(Color1 || (Color1 = {}));
+var c1 = Color1.Green;
+document.body.innerHTML += "2." + c1 + "</br>";
+var Color2;
+(function (Color2) {
+    Color2[Color2["Red"] = 1] = "Red";
+    Color2[Color2["Green"] = 2] = "Green";
+    Color2[Color2["Blue"] = 3] = "Blue";
+})(Color2 || (Color2 = {}));
+var colorName = Color2[2];
+var c2 = Color2.Green;
+document.body.innerHTML += "3." + colorName + " - " + c2 + "</br>";
+//Any
+document.body.innerHTML += '<h2>Any</h2>';
+document.body.innerHTML += '<p>动态类型</p>';
+var notSure = 666;
+notSure = 'maybe a string instead';
+document.body.innerHTML += notSure + "</br>";
+var notSure1 = 4;
+// notSure1.ifItExists(); // okay, ifItExists might exist at runtime
+// notSure1.toFixed();
+var prettySure = 4;
+// prettySure.toFixed(); //error
+var anyList = [1, true, "free"];
+anyList[1] = 100;
+document.body.innerHTML += anyList[0] + " - " + anyList[1] + " - " + anyList[2];
 //# sourceMappingURL=basic-type.js.map
