@@ -76,3 +76,13 @@ let prettySure: Object = 4;
 let anyList: any[] = [1, true, "free"];
 anyList[1] = 100;
 document.body.innerHTML += `${anyList[0]} - ${anyList[1]} - ${anyList[2]}`;
+
+//类型断言
+document.body.innerHTML += '<h2>类型断言</h2>';
+document.body.innerHTML += '<p>类型断言，有两种方式</p>';
+let someValue: any = "this is a string";
+let strLength: number = (<string>someValue).length;
+document.body.innerHTML += `${strLength}`;
+let someValue1: any = "this is a string";
+let strLength1: number = (someValue as string).length;
+document.body.innerHTML += `${strLength1}`;

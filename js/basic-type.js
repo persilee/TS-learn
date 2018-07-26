@@ -86,4 +86,13 @@ var prettySure = 4;
 var anyList = [1, true, "free"];
 anyList[1] = 100;
 document.body.innerHTML += anyList[0] + " - " + anyList[1] + " - " + anyList[2];
+//类型断言
+document.body.innerHTML += '<h2>类型断言</h2>';
+document.body.innerHTML += '<p>类型断言，有两种方式</p>';
+var someValue = "this is a string";
+var strLength = someValue.length;
+document.body.innerHTML += "" + strLength;
+var someValue1 = "this is a string";
+var strLength1 = someValue.length;
+document.body.innerHTML += "" + strLength1;
 //# sourceMappingURL=basic-type.js.map
